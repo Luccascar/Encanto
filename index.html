@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Encanto — Presentes e personalizados para toda ocasião</title>
+<meta name="description" content="Cestas, tags, adesivos, topos de bolo e personalizados feitos à mão pela Encanto. Escolha a categoria, conte os detalhes e finalize no WhatsApp.">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Caveat:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream: #F8F3FC;
+    --paper: #FFFFFF;
+    --ink: #3B2E52;
+    --ink-soft: #7A6C93;
+    --lilac: #9B7FD1;
+    --lilac-deep: #7C5FB8;
+    --pink: #F3AFCB;
+    --mint: #A9E4D2;
+    --yellow: #FCDD94;
+    --violet: #C6B4EC;
+    --line: rgba(59,46,82,0.14);
+    --shadow: 0 14px 30px rgba(59,46,82,0.14);
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family:'Inter', sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Baloo 2', sans-serif;
+    font-weight:700;
+    margin:0;
+    color: var(--ink);
+  }
+  a{ color:inherit; }
+  img{ max-width:100%; display:block; }
+  button{ font-family:inherit; cursor:pointer; }
+
+  .wrap{ max-width:1120px; margin:0 auto; padding:0 28px; }
+
+  /* dotted texture backdrop */
+  .dots{
+    position:absolute; inset:0; z-index:0;
+    background-image: radial-gradient(var(--line) 1.6px, transparent 1.6px);
+    background-size: 22px 22px;
+    opacity:0.5;
+    mask-image: linear-gradient(to bottom, black, transparent 90%);
+  }
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background: rgba(255,247,236,0.92);
+    backdrop-filter: blur(6px);
+    border-bottom: 2px solid var(--ink);
+  }
+  .header-row{ display:flex; align-items:center; justify-content:space-between; padding:16px 0; }
+  .logo{ display:flex; align-items:center; gap:10px; font-size:1.5rem; color:var(--lilac-deep); }
+  .logo img{ width:46px; height:46px; border-radius:50%; }
+  .header-cta{
+    display:inline-flex; align-items:center; gap:8px;
+    background: var(--ink); color: var(--cream);
+    padding:11px 20px; border-radius:999px; border:none;
+    font-weight:700; font-size:0.92rem; text-decoration:none;
+    transition: transform 0.15s ease, background 0.15s ease;
+  }
+  .header-cta:hover{ background: var(--lilac-deep); transform: translateY(-2px); }
+  .header-cta svg{ width:16px; height:16px; }
+
+  /* ---------- Hero ---------- */
+  .hero{ position:relative; padding:60px 0 90px; overflow:hidden; }
+  .hero-grid{
+    position:relative; z-index:1;
+    display:grid; grid-template-columns:1.05fr 0.95fr;
+    gap:40px; align-items:center;
+  }
+  .hero-tag{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:0.88rem; font-weight:700; color:var(--paper);
+    background: var(--lilac-deep);
+    padding:8px 16px; border-radius:999px; margin-bottom:22px;
+    transform: rotate(-2deg);
+  }
+  .hero h1{
+    font-size: clamp(2.3rem, 4.8vw, 3.4rem);
+    line-height:1.08;
+    max-width:13ch;
+  }
+  .hero h1 .hl{
+    background: var(--yellow);
+    padding: 2px 10px;
+    border-radius: 10px;
+    display:inline-block;
+    transform: rotate(-1.5deg);
+  }
+  .hero p{ margin-top:20px; font-size:1.1rem; color:var(--ink-soft); max-width:44ch; }
+  .hero-actions{ margin-top:30px; display:flex; flex-wrap:wrap; gap:14px; }
+  .btn-primary{
+    background: var(--lilac-deep); color:var(--paper);
+    border:none; padding:15px 28px; border-radius:999px;
+    font-weight:800; font-size:1rem; text-decoration:none; display:inline-block;
+    box-shadow: 0 8px 0 var(--ink);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .btn-primary:hover{ transform: translateY(-2px); }
+  .btn-primary:active{ transform: translateY(4px); box-shadow: 0 3px 0 var(--ink); }
+  .btn-ghost{
+    border:2.5px solid var(--ink); color:var(--ink);
+    padding:13px 24px; border-radius:999px; font-weight:700; font-size:1rem;
+    text-decoration:none; display:inline-block;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+  .btn-ghost:hover{ background:var(--ink); color:var(--cream); }
+
+  .hero-photo{ position:relative; display:flex; align-items:center; justify-content:center; padding:10px; }
+  .hero-photo .frame{
+    width:76%; background:var(--paper); padding:14px 14px 30px;
+    box-shadow: var(--shadow); transform: rotate(4deg); border-radius:18px;
+  }
+  .hero-photo .frame img{ border-radius:12px; }
+  .hero-photo .frame figcaption{
+    font-family:'Baloo 2', sans-serif; font-size:1rem; text-align:center;
+    margin-top:10px; color: var(--lilac-deep);
+  }
+  .sticker{
+    position:absolute; display:flex; align-items:center; justify-content:center;
+    text-align:center; font-family:'Baloo 2', sans-serif; color:var(--paper);
+    border-radius:50%; box-shadow: 0 10px 22px rgba(0,0,0,0.18);
+  }
+  .sticker.s1{
+    top:2%; left:0%; width:96px; height:96px; background:var(--mint);
+    font-size:0.85rem; padding:8px; transform:rotate(-10deg); line-height:1.2;
+  }
+  .sticker.s2{
+    bottom:4%; right:2%; width:110px; height:110px; background:var(--pink);
+    font-size:0.85rem; padding:10px; transform:rotate(8deg); line-height:1.2;
+  }
+  .handwritten{
+    position:absolute; top:-6%; right:12%;
+    font-family:'Caveat', cursive; font-weight:700; font-size:1.5rem;
+    color: var(--lilac-deep); transform: rotate(-7deg);
+    z-index:2;
+  }
+
+  /* ---------- Section heading ---------- */
+  .section-head{ display:flex; align-items:baseline; justify-content:space-between; gap:20px; margin-bottom:34px; flex-wrap:wrap; }
+  .section-head h2{ font-size:clamp(1.6rem, 3vw, 2.1rem); }
+  .section-head p{ color:var(--ink-soft); margin:6px 0 0; max-width:42ch; }
+  .kicker{
+    display:inline-block; font-size:0.85rem; font-weight:700; color:var(--lilac-deep);
+    margin-bottom:8px;
+  }
+
+  /* ---------- Gallery ---------- */
+  .gallery{ padding:20px 0 76px; }
+  .gallery-grid{ display:grid; grid-template-columns:repeat(4, 1fr); gap:22px; }
+  .polaroid{
+    background:var(--paper); padding:8px 8px 0; border-radius:16px;
+    box-shadow:0 10px 22px rgba(43,33,24,0.14);
+  }
+  .polaroid .ph{ aspect-ratio:4/5; overflow:hidden; border-radius:10px; }
+  .polaroid .ph img{ width:100%; height:100%; object-fit:cover; }
+  .polaroid figcaption{ font-size:0.82rem; color:var(--ink-soft); text-align:center; padding:10px 4px 14px; font-weight:600; }
+  .polaroid:nth-child(4n+1){ transform:rotate(-2.4deg); }
+  .polaroid:nth-child(4n+2){ transform:rotate(1.8deg); }
+  .polaroid:nth-child(4n+3){ transform:rotate(-1.4deg); }
+  .polaroid:nth-child(4n+4){ transform:rotate(2.2deg); }
+
+  /* ---------- Catalog ---------- */
+  .catalog{ padding:20px 0 76px; }
+  .cat-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:22px; }
+  .cat-card{
+    position:relative; background:var(--paper); border-radius:20px;
+    padding:26px 22px 22px; display:flex; flex-direction:column; gap:12px;
+    border:2.5px solid var(--ink); box-shadow: 0 6px 0 var(--ink);
+    transition: transform 0.15s ease;
+  }
+  .cat-card:hover{ transform: translateY(-3px); }
+  .cat-icon{
+    width:52px; height:52px; border-radius:14px;
+    display:flex; align-items:center; justify-content:center;
+    font-size:1.5rem; color:var(--paper);
+    transform: rotate(-4deg);
+  }
+  .cat-card h3{ font-size:1.15rem; }
+  .cat-card p{ color:var(--ink-soft); font-size:0.92rem; margin:0; flex-grow:1; }
+  .cat-price{ font-family:'Baloo 2', sans-serif; font-weight:700; font-size:1.05rem; color:var(--lilac-deep); }
+  .cat-price.quote{ color:var(--ink-soft); font-size:0.9rem; font-family:'Inter',sans-serif; font-weight:600; }
+  .cat-card .choose{
+    margin-top:4px; background:transparent; border:2px solid var(--ink); color:var(--ink);
+    padding:10px 18px; border-radius:999px; font-weight:700; font-size:0.88rem;
+    transition: all 0.15s ease;
+  }
+  .cat-card .choose:hover{ background:var(--ink); color:var(--cream); }
+  .cat-card.selected{ border-color: var(--lilac); box-shadow: 0 6px 0 var(--lilac-deep); }
+  .cat-card.selected .choose{ background:var(--lilac); border-color:var(--lilac); color:var(--paper); }
+
+  /* ---------- Order ---------- */
+  .order{ padding:10px 0 90px; }
+  .order-card{
+    background:var(--paper); border-radius:26px; padding:44px;
+    display:grid; grid-template-columns:1fr 1fr; gap:44px;
+    box-shadow: var(--shadow); border:2.5px solid var(--ink);
+  }
+  .order-card .intro h2{ font-size:1.8rem; margin-bottom:14px; }
+  .order-card .intro p{ color:var(--ink-soft); max-width:34ch; }
+  .order-card .intro .steps{ margin-top:26px; display:flex; flex-direction:column; gap:12px; }
+  .order-card .intro .steps div{ display:flex; align-items:flex-start; gap:10px; font-size:0.92rem; color:var(--ink-soft); font-weight:600; }
+  .order-card .intro .steps span.num{
+    flex-shrink:0; width:24px; height:24px; border-radius:50%;
+    background:var(--yellow); color:var(--ink); font-family:'Baloo 2',sans-serif;
+    display:flex; align-items:center; justify-content:center; font-size:0.8rem;
+  }
+
+  form{ display:flex; flex-direction:column; gap:16px; }
+  .field label{ display:block; font-size:0.86rem; font-weight:700; margin-bottom:7px; color:var(--ink); }
+  .field input, .field select, .field textarea{
+    width:100%; padding:12px 14px; border-radius:12px; border:2px solid var(--line);
+    background:var(--cream); font-family:'Inter',sans-serif; font-size:0.96rem; color:var(--ink);
+    resize: vertical;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus{ outline:none; border-color:var(--lilac); }
+  .submit-btn{
+    margin-top:6px; background:var(--lilac-deep); color:var(--paper); border:none;
+    padding:16px 24px; border-radius:14px; font-weight:800; font-size:1.02rem;
+    display:flex; align-items:center; justify-content:center; gap:10px;
+    box-shadow: 0 6px 0 var(--ink);
+    transition: transform 0.15s ease;
+  }
+  .submit-btn:hover{ transform: translateY(-2px); }
+  .submit-btn:active{ transform: translateY(3px); box-shadow: 0 2px 0 var(--ink); }
+  .submit-btn:disabled{ opacity:0.6; cursor:not-allowed; transform:none; }
+  .field.error input, .field.error select, .field.error textarea{ border-color:#D6577A; background:#FCEEF2; }
+  .field .error-msg{ display:none; color:#B23A5E; font-size:0.8rem; font-weight:600; margin-top:-6px; }
+  .field.error .error-msg{ display:block; }
+  .form-alert{
+    display:none; background:#FCEEF2; border:2px solid #D6577A; color:#8C2A47;
+    padding:12px 16px; border-radius:12px; font-size:0.88rem; font-weight:600;
+  }
+  .form-alert.show{ display:block; }
+  .submit-btn svg{ width:18px; height:18px; }
+  .hint{ font-size:0.8rem; color:var(--ink-soft); margin-top:-8px; }
+
+  /* ---------- Footer ---------- */
+  footer{ background:var(--ink); color:var(--cream); padding:48px 0 30px; }
+  .footer-row{ display:flex; justify-content:space-between; align-items:flex-start; gap:30px; flex-wrap:wrap; }
+  footer .logo-f{ display:flex; align-items:center; gap:12px; font-family:'Baloo 2', sans-serif; font-size:1.4rem; color:var(--paper); }
+  footer .logo-f img{ width:56px; height:56px; border-radius:50%; }
+  footer .tagline{ font-family:'Caveat', cursive; font-size:1.15rem; color:var(--pink); margin-top:2px; }
+  footer p{ color:rgba(255,247,236,0.75); font-size:0.9rem; max-width:34ch; margin-top:8px; }
+  .footer-links{ display:flex; flex-direction:column; gap:10px; font-size:0.94rem; }
+  .footer-links a{ text-decoration:none; color:var(--paper); font-weight:600; }
+  .footer-links a:hover{ color:var(--yellow); }
+  .footer-note{ margin-top:34px; padding-top:20px; border-top:1px solid rgba(255,247,236,0.18); font-size:0.78rem; color:rgba(255,247,236,0.55); }
+
+  @media (max-width: 940px){
+    .cat-grid{ grid-template-columns:repeat(2, 1fr); }
+    .gallery-grid{ grid-template-columns:repeat(3, 1fr); }
+  }
+  @media (max-width: 860px){
+    .hero-grid{ grid-template-columns:1fr; }
+    .hero-photo{ order:-1; padding:30px 0 0; }
+    .hero-photo .frame{ width:64%; margin:0 auto; }
+    .order-card{ grid-template-columns:1fr; padding:30px 22px; }
+  }
+  @media (max-width: 560px){
+    .gallery-grid{ grid-template-columns:repeat(2, 1fr); gap:16px; }
+    .cat-grid{ grid-template-columns:1fr; }
+    .hero-photo .frame{ width:84%; }
+    .wrap{ padding:0 20px; }
+    .sticker{ display:none; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap header-row">
+    <div class="logo"><img src="images/logo-header.png" alt="Logo Encanto"> Encanto</div>
+    <a class="header-cta" href="https://wa.me/5511951198435?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20queria%20saber%20mais%20sobre%20os%20trabalhos%20da%20Encanto!" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm5.79 14.06c-.24.68-1.4 1.31-1.93 1.36-.5.05-1.02.24-3.4-.71-2.87-1.14-4.72-4.06-4.86-4.25-.14-.19-1.16-1.54-1.16-2.93 0-1.39.73-2.08.99-2.36.26-.28.57-.35.76-.35.19 0 .38 0 .55.01.18.01.42-.07.65.5.24.58.81 1.99.88 2.13.07.14.12.31.02.5-.1.19-.15.31-.29.47-.14.16-.3.36-.43.48-.14.14-.29.29-.13.57.17.28.75 1.24 1.61 2 1.11.98 2.04 1.29 2.32 1.43.28.14.44.12.6-.07.17-.19.71-.83.9-1.11.19-.28.38-.24.63-.14.26.09 1.65.78 1.93.92.28.14.47.21.53.33.07.12.07.68-.17 1.36Z"/></svg>
+      WhatsApp
+    </a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="dots"></div>
+  <div class="wrap hero-grid">
+    <div>
+      <span class="hero-tag">✂️ Feito à mão, item por item</span>
+      <h1>Presentes com <span class="hl">cara de carinho</span> pra cada ocasião.</h1>
+      <p>Cestas, tags, adesivos, topos de bolo e personalizados sob medida pro seu tema. Escolha a categoria, conte os detalhes e a Encanto fecha tudo com você no WhatsApp.</p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="#pedido">Fazer um pedido</a>
+        <a class="btn-ghost" href="#catalogo">Ver catálogo</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <figure class="frame">
+        <img src="images/cesta-dia-maes.jpg" alt="Cesta de presente personalizada para o Dia das Mães">
+        <figcaption>Cesta Dia das Mães</figcaption>
+      </figure>
+      <div class="sticker s1">sob<br>medida</div>
+      <div class="sticker s2">100%<br>artesanal</div>
+      <span class="handwritten">escolhido com carinho 💜</span>
+    </div>
+  </div>
+</section>
+
+<section class="gallery" id="trabalhos">
+  <div class="wrap">
+    <span class="kicker">Portfólio</span>
+    <div class="section-head">
+      <h2>Coisas que já saíram daqui</h2>
+      <p>Cada peça é montada à mão pensando no tema, nas cores e no nome de quem vai receber.</p>
+    </div>
+    <div class="gallery-grid">
+      <figure class="polaroid"><div class="ph"><img src="images/cesta-dia-maes.jpg" alt="Cesta personalizada Dia das Mães"></div><figcaption>Cesta Dia das Mães</figcaption></figure>
+      <figure class="polaroid"><div class="ph"><img src="images/topo-safari.jpg" alt="Topo de bolo tema safari"></div><figcaption>Safari — 2 aninhos</figcaption></figure>
+      <figure class="polaroid"><div class="ph"><img src="images/tags-mimos-1.jpg" alt="Tags personalizadas para presilhas"></div><figcaption>Tags para mimos</figcaption></figure>
+      <figure class="polaroid"><div class="ph"><img src="images/topo-brawlstars.jpg" alt="Topo de bolo tema Brawl Stars"></div><figcaption>Brawl Stars — 9 anos</figcaption></figure>
+      <figure class="polaroid"><div class="ph"><img src="images/topo-xbox.jpg" alt="Topo de bolo tema games"></div><figcaption>Level up — 12 anos</figcaption></figure>
+      <figure class="polaroid"><div class="ph"><img src="images/tags-mimos-2.jpg" alt="Acessórios personalizados em cartela"></div><figcaption>Presilhas personalizadas</figcaption></figure>
+      <figure class="polaroid"><div class="ph"><img src="images/topo-tainara.jpg" alt="Topo de bolo com borboletas douradas"></div><figcaption>Borboletas douradas</figcaption></figure>
+      <figure class="polaroid"><div class="ph"><img src="images/topo-larissa.jpg" alt="Topo de mesversário tema vaquinha"></div><figcaption>Mêsversário — vaquinha</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="catalog" id="catalogo">
+  <div class="wrap">
+    <span class="kicker">Catálogo</span>
+    <div class="section-head">
+      <h2>Pra cada ocasião, um jeitinho diferente</h2>
+      <p>Sinalize o que faz mais sentido pra sua festa ou presente — os detalhes a gente combina no WhatsApp.</p>
+    </div>
+    <div class="cat-grid">
+
+      <div class="cat-card" data-cat="Topo de bolo personalizado" data-price="A partir de R$ 16">
+        <div class="cat-icon" style="background:var(--lilac)">🎂</div>
+        <h3>Topos de bolo</h3>
+        <p>Nome, tema e idade escolhidos por você, prontos pra brilhar no bolo.</p>
+        <span class="cat-price">A partir de R$ 16</span>
+        <button class="choose">Escolher este</button>
+      </div>
+
+      <div class="cat-card" data-cat="Tags personalizadas" data-price="25 unid. R$25 · 50 unid. R$38 · 100 unid. R$60">
+        <div class="cat-icon" style="background:var(--mint)">🏷️</div>
+        <h3>Tags personalizadas</h3>
+        <p>Com sua logo ou tema, embaladas individualmente. 25, 50 ou 100 unidades.</p>
+        <span class="cat-price">25un R$25 · 50un R$38 · 100un R$60</span>
+        <button class="choose">Escolher este</button>
+      </div>
+
+      <div class="cat-card" data-cat="Embalagem personalizada" data-price="A partir de R$ 30">
+        <div class="cat-icon" style="background:var(--yellow)">🎁</div>
+        <h3>Embalagens personalizadas</h3>
+        <p>Sacola ou caixa com a identidade da sua festa, pra presentear com estilo.</p>
+        <span class="cat-price">A partir de R$ 30</span>
+        <button class="choose">Escolher este</button>
+      </div>
+
+      <div class="cat-card" data-cat="Cesta de presentes" data-price="Sob orçamento">
+        <div class="cat-icon" style="background:var(--pink)">🧺</div>
+        <h3>Cestas de presentes</h3>
+        <p>Montada com o que a ocasião pedir — datas comemorativas, agradecimentos, cuidado no detalhe.</p>
+        <span class="cat-price quote">Sob orçamento</span>
+        <button class="choose">Escolher este</button>
+      </div>
+
+      <div class="cat-card" data-cat="Cesta de aniversário" data-price="Sob orçamento">
+        <div class="cat-icon" style="background:var(--violet)">🎈</div>
+        <h3>Cestas de aniversário</h3>
+        <p>Tema, cor e conteúdo do jeito que a festa pedir, para presentear o aniversariante.</p>
+        <span class="cat-price quote">Sob orçamento</span>
+        <button class="choose">Escolher este</button>
+      </div>
+
+      <div class="cat-card" data-cat="Maternidade" data-price="Sob orçamento">
+        <div class="cat-icon" style="background:var(--lilac-deep)">🍼</div>
+        <h3>Maternidade</h3>
+        <p>Kits para chá de bebê, maternidade e mêsversário, personalizados do jeitinho da família.</p>
+        <span class="cat-price quote">Sob orçamento</span>
+        <button class="choose">Escolher este</button>
+      </div>
+
+      <div class="cat-card" data-cat="Adesivos personalizados" data-price="Sob orçamento">
+        <div class="cat-icon" style="background:var(--mint)">✨</div>
+        <h3>Adesivos personalizados</h3>
+        <p>Para lembrancinhas, festas ou identidade de loja — no tamanho e quantidade que precisar.</p>
+        <span class="cat-price quote">Sob orçamento</span>
+        <button class="choose">Escolher este</button>
+      </div>
+
+      <div class="cat-card" data-cat="Caixas para decorar mesa" data-price="Sob orçamento">
+        <div class="cat-icon" style="background:var(--yellow)">📦</div>
+        <h3>Caixas para decorar mesa</h3>
+        <p>Peças temáticas pra compor a mesa do bolo ou do doce, combinando com a festa toda.</p>
+        <span class="cat-price quote">Sob orçamento</span>
+        <button class="choose">Escolher este</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="order" id="pedido">
+  <div class="wrap">
+    <div class="order-card">
+      <div class="intro">
+        <h2>Feche seu pedido</h2>
+        <p>Preencha os dados abaixo. Ao enviar, o WhatsApp abre com a mensagem já pronta pra Encanto.</p>
+        <div class="steps">
+          <div><span class="num">1</span> Escolha a categoria acima ou no campo ao lado</div>
+          <div><span class="num">2</span> Conte tema, cores e quantidade nos detalhes</div>
+          <div><span class="num">3</span> Marque a data e envie — a conversa segue no WhatsApp</div>
+        </div>
+      </div>
+      <form id="orderForm" novalidate>
+        <div class="form-alert" id="formAlert">Falta preencher alguns campos antes de enviar — dá uma olhada abaixo.</div>
+        <div class="field" id="field-nome">
+          <label for="nome">Seu nome</label>
+          <input type="text" id="nome" placeholder="Como podemos te chamar?">
+          <span class="error-msg">Escreve seu nome pra gente saber quem está pedindo.</span>
+        </div>
+        <div class="field" id="field-categoria">
+          <label for="categoria">Categoria</label>
+          <select id="categoria">
+            <option value="" disabled selected>Selecione uma categoria</option>
+            <option value="Topo de bolo personalizado (a partir de R$16)">Topos de bolo — a partir de R$16</option>
+            <option value="Tags personalizadas (25un R$25 / 50un R$38 / 100un R$60)">Tags personalizadas — 25un R$25 · 50un R$38 · 100un R$60</option>
+            <option value="Embalagem personalizada (a partir de R$30)">Embalagens personalizadas — a partir de R$30</option>
+            <option value="Cesta de presentes (sob orçamento)">Cestas de presentes — sob orçamento</option>
+            <option value="Cesta de aniversário (sob orçamento)">Cestas de aniversário — sob orçamento</option>
+            <option value="Maternidade (sob orçamento)">Maternidade — sob orçamento</option>
+            <option value="Adesivos personalizados (sob orçamento)">Adesivos personalizados — sob orçamento</option>
+            <option value="Caixas para decorar mesa (sob orçamento)">Caixas para decorar mesa — sob orçamento</option>
+          </select>
+          <span class="error-msg">Escolhe uma categoria pra continuar.</span>
+        </div>
+        <div class="field" id="field-detalhes">
+          <label for="detalhes">Detalhes do pedido</label>
+          <textarea id="detalhes" rows="3" placeholder="Tema, cores, quantidade, nome pra personalizar..."></textarea>
+        </div>
+        <div class="field" id="field-data">
+          <label for="data">Data desejada</label>
+          <input type="date" id="data">
+          <p class="hint">Pode ser uma data aproximada — combinamos os detalhes no WhatsApp.</p>
+          <span class="error-msg">Marca a data que precisa do pedido pronto.</span>
+        </div>
+        <button type="submit" class="submit-btn" id="submitBtn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm5.79 14.06c-.24.68-1.4 1.31-1.93 1.36-.5.05-1.02.24-3.4-.71-2.87-1.14-4.72-4.06-4.86-4.25-.14-.19-1.16-1.54-1.16-2.93 0-1.39.73-2.08.99-2.36.26-.28.57-.35.76-.35.19 0 .38 0 .55.01.18.01.42-.07.65.5.24.58.81 1.99.88 2.13.07.14.12.31.02.5-.1.19-.15.31-.29.47-.14.16-.3.36-.43.48-.14.14-.29.29-.13.57.17.28.75 1.24 1.61 2 1.11.98 2.04 1.29 2.32 1.43.28.14.44.12.6-.07.17-.19.71-.83.9-1.11.19-.28.38-.24.63-.14.26.09 1.65.78 1.93.92.28.14.47.21.53.33.07.12.07.68-.17 1.36Z"/></svg>
+          Enviar pedido no WhatsApp
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-row">
+    <div>
+      <div class="logo-f"><img src="images/logo-footer.png" alt="Logo Encanto"> Encanto</div>
+      <p class="tagline">Pequenos detalhes, grandes sentimentos</p>
+      <p>Presentes e personalizados feitos à mão para cada ocasião — do topo do bolo à cesta completa.</p>
+    </div>
+    <div class="footer-links">
+      <a href="https://wa.me/5511951198435" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="#trabalhos">Trabalhos</a>
+      <a href="#catalogo">Catálogo</a>
+      <a href="#pedido">Fazer pedido</a>
+    </div>
+  </div>
+  <div class="wrap footer-note">
+    Este site não coleta nem armazena nenhum dado — o formulário só monta a sua mensagem e abre o WhatsApp.
+  </div>
+</footer>
+
+<script>
+  const WHATSAPP_NUMBER = "5511951198435";
+
+  const cards = document.querySelectorAll(".cat-card");
+  const catSelect = document.getElementById("categoria");
+
+  function findOptionByCat(catName){
+    return [...catSelect.options].find(opt => opt.value.startsWith(catName));
+  }
+
+  cards.forEach(card => {
+    const btn = card.querySelector(".choose");
+    btn.addEventListener("click", () => {
+      cards.forEach(c => c.classList.remove("selected"));
+      card.classList.add("selected");
+      const opt = findOptionByCat(card.dataset.cat);
+      if (opt) catSelect.value = opt.value;
+      document.getElementById("pedido").scrollIntoView({ behavior:"smooth", block:"center" });
+    });
+  });
+
+  catSelect.addEventListener("change", () => {
+    cards.forEach(c => {
+      const opt = findOptionByCat(c.dataset.cat);
+      c.classList.toggle("selected", opt && opt.value === catSelect.value);
+    });
+  });
+
+  const form = document.getElementById("orderForm");
+  const formAlert = document.getElementById("formAlert");
+  const submitBtn = document.getElementById("submitBtn");
+
+  function setFieldError(fieldId, hasError){
+    document.getElementById(fieldId).classList.toggle("error", hasError);
+  }
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const nomeEl = document.getElementById("nome");
+    const dataEl = document.getElementById("data");
+    const nome = nomeEl.value.trim();
+    const categoria = catSelect.value;
+    const detalhes = document.getElementById("detalhes").value.trim();
+    const dataInput = dataEl.value;
+
+    // validação manual dos campos obrigatórios
+    const nomeInvalido = nome.length === 0;
+    const categoriaInvalida = categoria.length === 0;
+    const dataInvalida = dataInput.length === 0;
+
+    setFieldError("field-nome", nomeInvalido);
+    setFieldError("field-categoria", categoriaInvalida);
+    setFieldError("field-data", dataInvalida);
+
+    if (nomeInvalido || categoriaInvalida || dataInvalida) {
+      formAlert.classList.add("show");
+      const firstInvalid = document.querySelector(".field.error");
+      if (firstInvalid) firstInvalid.scrollIntoView({ behavior: "smooth", block: "center" });
+      return;
+    }
+
+    formAlert.classList.remove("show");
+
+    let dataFormatada = dataInput;
+    const partes = dataInput.split("-");
+    if (partes.length === 3) {
+      const [ano, mes, dia] = partes;
+      dataFormatada = `${dia}/${mes}/${ano}`;
+    }
+
+    let mensagem =
+      `Olá! Meu nome é ${nome}.\n` +
+      `Categoria: ${categoria}\n`;
+    if (detalhes) mensagem += `Detalhes: ${detalhes}\n`;
+    mensagem += `Data desejada: ${dataFormatada}`;
+
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(mensagem)}`;
+
+    // navegação direta em vez de window.open: mais confiável em navegadores
+    // mobile e dentro de webviews, onde pop-ups costumam ser bloqueados.
+    submitBtn.disabled = true;
+    window.location.href = url;
+    setTimeout(() => { submitBtn.disabled = false; }, 1500);
+  });
+
+  // some navegadores mostram :invalid nativo por causa do "required" antigo;
+  // como agora validamos manualmente, removemos o atributo se ainda existir.
+  ["nome", "categoria", "data"].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.removeAttribute("required");
+  });
+</script>
+
+</body>
+</html>
