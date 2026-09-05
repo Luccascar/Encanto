@@ -96,7 +96,7 @@
     max-width:13ch;
   }
   .hero h1 .hl{
-    background: var(--yellow);
+    background: var(--pink);
     padding: 2px 10px;
     border-radius: 10px;
     display:inline-block;
@@ -267,17 +267,22 @@
     .gallery-grid{ grid-template-columns:repeat(3, 1fr); }
   }
   @media (max-width: 860px){
-    .hero-grid{ grid-template-columns:1fr; }
-    .hero-photo{ order:-1; padding:30px 0 0; }
-    .hero-photo .frame{ width:64%; margin:0 auto; }
+    .hero{ padding: 36px 0 64px; }
+    .hero-grid{ grid-template-columns:1fr; gap:8px; }
+    .hero-photo{ order:-1; padding:12px 0 28px; }
+    .hero-photo .frame{ width:62%; margin:0 auto; transform: rotate(2deg); }
+    .hero-tag{ transform:none; }
+    .hero h1 .hl{ transform:none; }
     .order-card{ grid-template-columns:1fr; padding:30px 22px; }
+    .handwritten{ display:none; }
   }
   @media (max-width: 560px){
     .gallery-grid{ grid-template-columns:repeat(2, 1fr); gap:16px; }
     .cat-grid{ grid-template-columns:1fr; }
-    .hero-photo .frame{ width:84%; }
+    .hero-photo .frame{ width:78%; }
     .wrap{ padding:0 20px; }
     .sticker{ display:none; }
+    .polaroid{ transform:none !important; }
   }
 </style>
 </head>
@@ -363,7 +368,7 @@
       </div>
 
       <div class="cat-card" data-cat="Embalagem personalizada" data-price="A partir de R$ 30">
-        <div class="cat-icon" style="background:var(--yellow)">🎁</div>
+        <div class="cat-icon" style="background:var(--violet)">🎁</div>
         <h3>Embalagens personalizadas</h3>
         <p>Sacola ou caixa com a identidade da sua festa, pra presentear com estilo.</p>
         <span class="cat-price">A partir de R$ 30</span>
@@ -379,7 +384,7 @@
       </div>
 
       <div class="cat-card" data-cat="Cesta de aniversário" data-price="Sob orçamento">
-        <div class="cat-icon" style="background:var(--violet)">🎈</div>
+        <div class="cat-icon" style="background:var(--yellow)">🎈</div>
         <h3>Cestas de aniversário</h3>
         <p>Tema, cor e conteúdo do jeito que a festa pedir, para presentear o aniversariante.</p>
         <span class="cat-price quote">Sob orçamento</span>
@@ -403,7 +408,7 @@
       </div>
 
       <div class="cat-card" data-cat="Caixas para decorar mesa" data-price="Sob orçamento">
-        <div class="cat-icon" style="background:var(--yellow)">📦</div>
+        <div class="cat-icon" style="background:var(--pink)">📦</div>
         <h3>Caixas para decorar mesa</h3>
         <p>Peças temáticas pra compor a mesa do bolo ou do doce, combinando com a festa toda.</p>
         <span class="cat-price quote">Sob orçamento</span>
